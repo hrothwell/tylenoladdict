@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="defaultHead">
+	<link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+	<!-- Flex box for top/header  -->
+	<div id="page" class="primaryContainer">
+		<div id="topSection" class="topSection">
+			<div id="profilePicture" class="profilePictureContainer columnFlex">
+				<div th:text="${data.name}" class="centered">placeholder</div>
+				<img class="profilePicture" th:src="${data.profilePic}"/>
+			</div>
+			<div id="aboutAndContacts" class="columnFlex aboutAndContacts">
+				<div id="contacts">
+					<h3>Contact</h3>
+					<a th:href="${data.twitter}">Twitter</a>
+					<a th:href="${data.email}">Email</a>
+				</div>
+				<div id="about" class="about" th:text="${data.about}">about</div>
+			</div>
+		</div>
+		<div id="bottomSection" class="bottomSection">
+			<div class="videoContainer" th:each="videoUrl: ${data.videoList}">
+				<iframe th:src="${videoUrl}" width="560" height="315" allow="allowfullscreen"></iframe>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
