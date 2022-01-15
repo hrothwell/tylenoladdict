@@ -1,0 +1,107 @@
+@charset "ISO-8859-1";
+
+.topSection{
+	display: flex;
+	flex-direction: row;
+}
+.arrowContainer{
+	width: 100%;
+}
+.videoListContainer{
+	flex-wrap: wrap;
+	text-align: center;
+	width: 900px; /*i do NOT know why I can't get this to work without setting the width here rn */
+}
+
+#emailPopUp{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 300px;
+}
+
+#emailPopupBody{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.centeredFlex{
+	display: flex;
+	justify-content: center;
+ 	align-items: center;
+}
+.videoListContainer > div{
+	flex: 50%;
+	text-align: center;
+	justify-content: space-around;
+}
+
+iframe{
+	padding: 10px;
+}
+
+.aboutAndContacts{
+	width: 100%;
+	text-align: center;
+}
+
+.aboutAndContacts > div{
+	padding: 5px;
+}
+
+.centered{
+	text-align: center;
+}
+
+.about{
+	width: 100%;
+}
+
+.columnFlex{
+	display: flex;
+	flex-direction: column;
+}
+
+
+img.profilePicture{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+
+.footer{
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #c0c0c0;
+	text-align: center
+}
+
+.footer > a > img{
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+/*Testing some visual stuff, just a background animation*/
+body, html {
+    background: #009999;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+img.nextPrev{
+	text-align: center;
+	cursor: pointer;
+	padding: 5px;
+}
