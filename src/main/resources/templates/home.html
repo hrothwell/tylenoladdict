@@ -4,18 +4,19 @@
 	<link rel="stylesheet" th:href="@{/css/style.css}"/>
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 	<link rel="stylesheet" th:href="@{/css/slick.css}"/>
 	<link rel="stylesheet" th:href="@{/css/slick-theme.css}"/>
 	<script type="text/javascript" th:src="@{/js/slickSetup.js}"></script>
+	 <link rel="stylesheet" href="https://unpkg.com/98.css" />
 </head>
 <body>
 	<!-- Flex box for top/header  -->
 	<div id="page" class="primaryContainer">
 		<div id="topSection" class="topSection">
 			<div id="profilePicture" class="profilePictureContainer columnFlex">
-				<div th:text="${data.name}" class="centered">placeholder</div>
 				<img id="openEyes" class="profilePicture" th:src="${data.profilePic}"/>
 				<img id="closedEyes" class="profilePicture" th:src="${data.blink}" style="display:none;"/>
 			</div>
@@ -24,12 +25,14 @@
 				<div id="about" class="about" th:text="${data.about}">about</div>
 			</div>
 		</div>
-		<div id="arrowContainer" class="centeredFlex" style="border: dashed">
+		<div id="arrowContainer" class="centeredFlex">
 			<span><img id="prev" class="nextPrev" th:src="@{/images/prev.png}"/></span>
-			<div id="windowsBox" class="windowsBox">
-				<div id="windowBoxHeader" class="windowBoxHeader"></div>
+			<div id="windowsBox" class="window">
+				<div class="title-bar">
+				    <div class="title-bar-text">Movies</div>
+			  </div>
 				
-				<div id="videoListContainer" class="videoListContainer">
+				<div id="videoListContainer" class="videoListContainer window-body">
 					<div class="videoContainer" th:each="videoUrl: ${data.videoList}">
 						<iframe th:src="${videoUrl}" width="840" height="545" allow="allowfullscreen"></iframe>
 					</div>
@@ -40,17 +43,20 @@
 	</div>
 	
 	<!-- TODO finish this -->
-	<div id="emailPopUp" class="windowsBox" style="display:none;">
-		<div id="emailPopupHeader" class="windowBoxHeader">
-			<span>blue</span>
+	<div id="emailPopUp" class="window" style="display:none;">
+		<div id="emailPopupHeader" class="title-bar">
+			<div class="title-bar-text">Email</div>
+			<div class="title-bar-controls">
+				<button id="emailClose" aria-label="Close"></button>
+			</div>
 		</div>
-		<div id="emailPopupBody">
+		<div id="emailPopupBody" class="window-body">
 			<span th:text="${data.email}">empty</span>
-			<div class="emailPopupOK">OK</div>
+			<button id="OKEmailButton">OK</button>
 		</div>
 	</div>
 	
-	<!-- footer "task bar" -->
+	<!-- footer "task bar" TODO make these buttons instead of images? but then how to put in icons? -->
 	<div class="footer">
 		<a th:href="${data.youtube}"><img th:src="@{/images/youtubeButton.png}"/></a>
 		<a th:href="${data.twitter}"><img th:src="@{/images/twitterButton.png}"/></a>

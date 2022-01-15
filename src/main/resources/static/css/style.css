@@ -9,20 +9,8 @@
 }
 .videoListContainer{
 	flex-wrap: wrap;
-	border: solid;
 	text-align: center;
 	width: 900px; /*i do NOT know why I can't get this to work without setting the width here rn */
-}
-
-.windowsBox{
-	display:flex;
-	flex-direction: column;
-	background-color: #c0c0c0;
-}
-
-.windowBoxHeader{
-	height: 20px;
-	background-color: #0000c8;
 }
 
 #emailPopUp{
@@ -34,7 +22,6 @@
     margin-top: -50px;
     margin-left: -50px;
     width: 300px;
-    height: 300px;
 }
 
 #emailPopupBody{

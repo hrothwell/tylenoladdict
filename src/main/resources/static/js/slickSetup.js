@@ -15,15 +15,20 @@ $(document).ready(function(){
 		$("#videoListContainer").slick("prev");
 	});
 	
-	setupEmailButton();
+	setupEmailBox();
 	blink();
 });
 
 
-function setupEmailButton(){
+function setupEmailBox(){
 	$("#email").click(function(){
 		//todo
 		$("#emailPopUp").toggle();
+	});
+	$("#emailPopUp").draggable({cancel: ".window-body"});
+	
+	$("#OKEmailButton, #emailClose").click(function(){
+		$("#emailPopUp").hide();
 	});
 }
 

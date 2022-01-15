@@ -35,7 +35,6 @@ public class MainController {
 		String blink = restTemplate.getForObject("/blink.txt", String.class);
 		String twitter = restTemplate.getForObject("/twitter.txt", String.class);
 		String email = restTemplate.getForObject("/email.txt", String.class);
-		String name = restTemplate.getForObject("/name.txt", String.class);
 		String youtube = restTemplate.getForObject("/youtube.txt", String.class);
 		String videoLinks = restTemplate.getForObject("/videoLinks.txt", String.class);
 		String[] videoList = videoLinks.split("\n");//will this be the right thing to split by
@@ -47,7 +46,6 @@ public class MainController {
 		data.put("blink", blink);
 		data.put("twitter", twitter);
 		data.put("email", email);
-		data.put("name", name);
 		data.put("youtube", youtube);
 		return data;
 	}
