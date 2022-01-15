@@ -4,18 +4,60 @@
 	display: flex;
 	flex-direction: row;
 }
-
-.bottomSection{
-	display: flex;
+.arrowContainer{
+	width: 100%;
+}
+.videoListContainer{
 	flex-wrap: wrap;
 	border: solid;
-	height: 100%;
-	width: 100%;
 	text-align: center;
+	width: 900px; /*i do NOT know why I can't get this to work without setting the width here rn */
 }
 
-.bottomSection > div{
+.windowsBox{
+	display:flex;
+	flex-direction: column;
+	background-color: #c0c0c0;
+}
+
+.windowBoxHeader{
+	height: 20px;
+	background-color: #0000c8;
+}
+
+#emailPopUp{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 300px;
+    height: 300px;
+}
+
+#emailPopupBody{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.centeredFlex{
+	display: flex;
+	justify-content: center;
+ 	align-items: center;
+}
+.videoListContainer > div{
 	flex: 50%;
+	text-align: center;
+	justify-content: space-around;
+}
+
+iframe{
+	padding: 10px;
 }
 
 .aboutAndContacts{
@@ -29,12 +71,6 @@
 
 .centered{
 	text-align: center;
-}
-
-#contacts > a{
-	color: white;
-	font-size: 30px;
-	padding: 15px;
 }
 
 .about{
@@ -53,21 +89,32 @@ img.profilePicture{
 	border-radius: 50%;
 }
 
-/*Testing some visual stuff, just a background animation*/
-body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+.footer{
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #c0c0c0;
+	text-align: center
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+.footer > a > img{
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+/*Testing some visual stuff, just a background animation*/
+body, html {
+    background: #009999;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+img.nextPrev{
+	text-align: center;
+	cursor: pointer;
+	padding: 5px;
 }

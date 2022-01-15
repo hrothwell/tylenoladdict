@@ -2,6 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="defaultHead">
 	<link rel="stylesheet" th:href="@{/css/style.css}"/>
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" th:href="@{/css/slick.css}"/>
+	<link rel="stylesheet" th:href="@{/css/slick-theme.css}"/>
+	<script type="text/javascript" th:src="@{/js/slickSetup.js}"></script>
 </head>
 <body>
 	<!-- Flex box for top/header  -->
@@ -9,22 +16,45 @@
 		<div id="topSection" class="topSection">
 			<div id="profilePicture" class="profilePictureContainer columnFlex">
 				<div th:text="${data.name}" class="centered">placeholder</div>
-				<img class="profilePicture" th:src="${data.profilePic}"/>
+				<img id="openEyes" class="profilePicture" th:src="${data.profilePic}"/>
+				<img id="closedEyes" class="profilePicture" th:src="${data.blink}" style="display:none;"/>
 			</div>
 			<div id="aboutAndContacts" class="columnFlex aboutAndContacts">
-				<div id="contacts">
-					<h3>Contact</h3>
-					<a th:href="${data.twitter}">Twitter</a>
-					<a th:href="${data.email}">Email</a>
-				</div>
+				<h3>About</h3>
 				<div id="about" class="about" th:text="${data.about}">about</div>
 			</div>
 		</div>
-		<div id="bottomSection" class="bottomSection">
-			<div class="videoContainer" th:each="videoUrl: ${data.videoList}">
-				<iframe th:src="${videoUrl}" width="560" height="315" allow="allowfullscreen"></iframe>
+		<div id="arrowContainer" class="centeredFlex" style="border: dashed">
+			<span><img id="prev" class="nextPrev" th:src="@{/images/prev.png}"/></span>
+			<div id="windowsBox" class="windowsBox">
+				<div id="windowBoxHeader" class="windowBoxHeader"></div>
+				
+				<div id="videoListContainer" class="videoListContainer">
+					<div class="videoContainer" th:each="videoUrl: ${data.videoList}">
+						<iframe th:src="${videoUrl}" width="840" height="545" allow="allowfullscreen"></iframe>
+					</div>
+				</div>
 			</div>
+			<span><img id="next" class="nextPrev" th:src="@{/images/next.png}"/></span>
 		</div>
+	</div>
+	
+	<!-- TODO finish this -->
+	<div id="emailPopUp" class="windowsBox" style="display:none;">
+		<div id="emailPopupHeader" class="windowBoxHeader">
+			<span>blue</span>
+		</div>
+		<div id="emailPopupBody">
+			<span th:text="${data.email}">empty</span>
+			<div class="emailPopupOK">OK</div>
+		</div>
+	</div>
+	
+	<!-- footer "task bar" -->
+	<div class="footer">
+		<a th:href="${data.youtube}"><img th:src="@{/images/youtubeButton.png}"/></a>
+		<a th:href="${data.twitter}"><img th:src="@{/images/twitterButton.png}"/></a>
+		<a><img id="email" th:src="@{/images/emailButton.png}"/></a>
 	</div>
 </body>
 </html>
