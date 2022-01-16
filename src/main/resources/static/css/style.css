@@ -22,6 +22,7 @@
     margin-top: -50px;
     margin-left: -50px;
     width: 300px;
+    z-index: 99;
 }
 
 #emailPopupBody{
@@ -48,8 +49,11 @@ iframe{
 }
 
 .aboutAndContacts{
-	width: 100%;
+	width: 25%;
+	height: 100%;
 	text-align: center;
+	margin-left: 100px;
+	z-index: 2;
 }
 
 .aboutAndContacts > div{
@@ -61,7 +65,7 @@ iframe{
 }
 
 .about{
-	width: 100%;
+	word-break: break-word;
 }
 
 .columnFlex{
@@ -74,6 +78,14 @@ img.profilePicture{
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
+}
+
+#bin{
+	width: 48px;
+	height: 48px;
+	right: 10px;
+	bottom: 50px;
+	position: fixed;
 }
 
 .footer{
@@ -90,6 +102,7 @@ img.profilePicture{
 .footer > a > img{
 	cursor: pointer;
 	vertical-align: middle;
+	padding: 5px;
 }
 
 /*Testing some visual stuff, just a background animation*/
@@ -104,4 +117,6 @@ img.nextPrev{
 	text-align: center;
 	cursor: pointer;
 	padding: 5px;
+	width: 48px;
+	height: 48px;
 }

@@ -15,6 +15,7 @@ $(document).ready(function(){
 		$("#videoListContainer").slick("prev");
 	});
 	
+	$("#aboutAndContacts").draggable({cancel: ".window-body"});
 	setupEmailBox();
 	blink();
 });
