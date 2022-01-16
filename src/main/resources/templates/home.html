@@ -20,11 +20,14 @@
 				<img id="openEyes" class="profilePicture" th:src="${data.profilePic}"/>
 				<img id="closedEyes" class="profilePicture" th:src="${data.blink}" style="display:none;"/>
 			</div>
-			<div id="aboutAndContacts" class="columnFlex aboutAndContacts">
-				<h3>About</h3>
-				<div id="about" class="about" th:text="${data.about}">about</div>
+			<div id="aboutAndContacts" class="columnFlex aboutAndContacts window">
+				<div class="title-bar">
+					<div class="title-bar-text">About</div>
+				</div>
+				<div id="about" class="about window-body" th:text="${data.about}">about</div>
 			</div>
 		</div>
+		<br/>
 		<div id="arrowContainer" class="centeredFlex">
 			<span><img id="prev" class="nextPrev" th:src="@{/images/prev.png}"/></span>
 			<div id="windowsBox" class="window">
@@ -51,16 +54,18 @@
 			</div>
 		</div>
 		<div id="emailPopupBody" class="window-body">
-			<span th:text="${data.email}">empty</span>
+			<div th:text="${data.email}">empty</div>
+			<br/>
 			<button id="OKEmailButton">OK</button>
 		</div>
 	</div>
-	
+	<img id="bin" th:src="@{/images/bin.png}"/>
 	<!-- footer "task bar" TODO make these buttons instead of images? but then how to put in icons? -->
 	<div class="footer">
 		<a th:href="${data.youtube}"><img th:src="@{/images/youtubeButton.png}"/></a>
 		<a th:href="${data.twitter}"><img th:src="@{/images/twitterButton.png}"/></a>
 		<a><img id="email" th:src="@{/images/emailButton.png}"/></a>
+		<a><img id="moviesTab" th:src="@{/images/movies.png}"/></a>
 	</div>
 </body>
 </html>
