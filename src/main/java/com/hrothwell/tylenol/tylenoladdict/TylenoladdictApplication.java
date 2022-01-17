@@ -11,5 +11,4 @@ public class TylenoladdictApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TylenoladdictApplication.class, args);
 	}
-
 }

@@ -17,7 +17,6 @@ $(document).ready(function(){
 	
 	$("#aboutAndContacts").draggable({cancel: ".window-body"});
 	setupEmailBox();
-	blink();
 });
 
 
@@ -31,11 +30,4 @@ function setupEmailBox(){
 	$("#OKEmailButton, #emailClose").click(function(){
 		$("#emailPopUp").hide();
 	});
-}
-
-function blink(){
-	$("#openEyes").toggle();
-	$("#closedEyes").toggle();
-	
-	setTimeout(blink, Math.random() * 2500);
 }
