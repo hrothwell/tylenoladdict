@@ -19,8 +19,7 @@
 	<div id="page" class="primaryContainer">
 		<div id="topSection" class="topSection">
 			<div id="profilePicture" class="profilePictureContainer columnFlex">
-				<img id="openEyes" class="profilePicture" th:src="${data.profilePic}"/>
-				<img id="closedEyes" class="profilePicture" th:src="${data.blink}" style="display:none;"/>
+				<img th:src="@{/images/man.gif}"/>
 			</div>
 			<div id="aboutAndContacts" class="columnFlex aboutAndContacts window">
 				<div class="title-bar">
@@ -62,7 +61,6 @@
 		</div>
 	</div>
 	<img id="bin" th:src="@{/images/bin.png}"/>
-	<!-- footer "task bar" TODO make these buttons instead of images? but then how to put in icons? -->
 	<div class="footer">
 		<a th:href="${data.youtube}"><img th:src="@{/images/youtubeButton.png}"/></a>
 		<a th:href="${data.twitter}"><img th:src="@{/images/twitterButton.png}"/></a>
