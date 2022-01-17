@@ -30,19 +30,21 @@
 		</div>
 		<br/>
 		<div id="arrowContainer" class="centeredFlex">
-			<span><img id="prev" class="nextPrev" th:src="@{/images/prev.png}"/></span>
-			<div id="windowsBox" class="window">
-				<div class="title-bar">
-				    <div class="title-bar-text">Movies</div>
-			  	</div>
-				
-				<div id="videoListContainer" class="videoListContainer window-body">
-					<div class="videoContainer" th:each="videoUrl: ${data.videoList}">
-						<iframe th:src="${videoUrl}" width="840" height="545" allow="allowfullscreen"></iframe>
+			<div class="centeredFlex movieDraggable">
+				<span><img id="prev" class="nextPrev" th:src="@{/images/prev.png}"/></span>
+				<div id="windowsBox" class="window">
+					<div class="title-bar">
+					    <div class="title-bar-text">Movies</div>
+				  	</div>
+					
+					<div id="videoListContainer" class="videoListContainer window-body">
+						<div class="videoContainer" th:each="videoUrl: ${data.videoList}">
+							<iframe th:src="${videoUrl}" width="840" height="545" allow="allowfullscreen"></iframe>
+						</div>
 					</div>
 				</div>
+				<span><img id="next" class="nextPrev" th:src="@{/images/next.png}"/></span>
 			</div>
-			<span><img id="next" class="nextPrev" th:src="@{/images/next.png}"/></span>
 		</div>
 	</div>
 	
