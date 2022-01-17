@@ -16,6 +16,7 @@ $(document).ready(function(){
 	});
 	
 	$("#aboutAndContacts").draggable({cancel: ".window-body"});
+	$("#arrowContainer").draggable();
 	setupEmailBox();
 });
 
